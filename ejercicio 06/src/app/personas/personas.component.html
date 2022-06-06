@@ -1,0 +1,51 @@
+<div class="container" id="contenedor_principal">
+    <form #form (ngSubmit)='aniadirPersona()'>
+    
+        <div class="form-group row">
+            <label class="col-md-2 control-label" for="nombre">Nombre</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="nombre" [(ngModel)]="persona.nombre"  #nombre />
+            </div>
+            
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-2 control-label" for="apellidos">Apellidos</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="apellidos" [(ngModel)]="persona.apellidos" #apellidos/>
+            </div>
+            
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-2 control-label" for="edad">Edad</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" name="edad" [(ngModel)]="persona.edad" #edad  />
+            </div>
+            
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-2 control-label"  for="DNI">DNI</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="dni" [(ngModel)]="persona.DNI" #DNI />
+            </div>
+            
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-2"></div>
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-block btn-outline-primary">Enviar</button>
+            </div>
+        </div>
+
+    </form>
+
+    <div id="agenda row" *ngIf="!isEmpty()">
+        <div class="persona col-sm-4 panel panel-default" *ngFor="let persona of personas">
+            <h1>{{persona.nombreCompleto()}}</h1>
+            <p>{{persona.mostrarInfo()}}</p>
+        </div>
+    </div>
+</div>

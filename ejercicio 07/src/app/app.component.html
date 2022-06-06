@@ -1,0 +1,10 @@
+
+<div *ngIf="!load">
+    <div class="spinner">
+      <img src="assets/img/spinner.gif"/>
+    </div>
+</div>
+
+<div *ngIf="load">
+  <app-component1></app-component1>
+</div>

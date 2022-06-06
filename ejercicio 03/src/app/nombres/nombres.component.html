@@ -1,0 +1,9 @@
+
+<input type="text" #txtNombre required/>
+<button (click)="anadirNombre(txtNombre.value)">Insertar nombre</button>
+
+<ul>
+    <li *ngFor="let nom of nombres">
+        {{nom}}
+    </li>
+</ul>
